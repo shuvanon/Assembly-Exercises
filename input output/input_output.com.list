@@ -2,7 +2,7 @@ EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
  
 input_output.com -- emu8086 assembler version: 4.08  
  
-[ 12/29/2016  --  12:43:01 PM ] 
+[ 12/29/2016  --  12:58:19 PM ] 
  
 ===================================================================================================
 [LINE]     LOC: MACHINE CODE                          SOURCE
@@ -19,10 +19,14 @@ input_output.com -- emu8086 assembler version: 4.08
 [   9]    0105: CD 21                                 int 21h
 [  10]    0107: A2 02 01                              mov x, al
 [  11]        :                                       
-[  12]    010A: B4 02                                 mov ah, 2 ;output
-[  13]    010C: 8A 16 02 01                           mov dl, x
-[  14]    0110: CD 21                                 int 21h
+[  12]    010A: B4 02                                 mov ah, 2
+[  13]    010C: B2 0A                                 mov dl, 0ah
+[  14]    010E: CD 21                                 int 21h
 [  15]        :                                       
+[  16]    0110: B4 02                                 mov ah, 2 ;output
+[  17]    0112: 8A 16 02 01                           mov dl, x
+[  18]    0116: CD 21                                 int 21h
+[  19]        :                                       
  
 ===================================================================================================
  

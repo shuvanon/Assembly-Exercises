@@ -9,6 +9,10 @@ org 100h
     int 21h
     mov x, al
     
+    mov ah, 2
+    mov dl, 0ah
+    int 21h
+    
     mov ah, 2 ;output
     mov dl, x
     int 21h
