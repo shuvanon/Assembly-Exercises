@@ -10,7 +10,9 @@ int 21h
 mov x, al
 
 mov ah, 2
-mov dl, 0ah
+mov dl, 0dh  ; carge return (line er shurure jaoa)
+int 21h
+mov dl, 0ah   ; line feed (nicher line e namano)
 int 21h
 
 mov ah, 2 ;output
