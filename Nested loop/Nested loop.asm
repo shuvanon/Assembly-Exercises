@@ -1,0 +1,38 @@
+.model small
+
+.code
+main proc
+    mov cl, 30h
+    mov bl, '1'
+    
+    Loop1:
+        cmp bl, 7Ah
+        jg exit
+        cmp cl,39h
+        je newline
+        
+        mov ah,2
+        mov dl, bl
+        int 21h
+        
+        inc cl
+        inc bl
+        
+        jmp Loop1
+    
+    newline:
+        mov ah,2
+        mov dl,0dh
+        int 21h
+        mov dl, 0ah
+        int 21h
+        
+        mov cl,30h
+        jmp Loop1
+    
+    exit:
+    mov ah, 4ch
+    int 21h
+    
+    main endp
+end main
