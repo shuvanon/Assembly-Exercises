@@ -1,0 +1,17 @@
+.code
+main proc
+        mov cx,26
+        mov ah,2
+        mov dl, 'A'
+        
+        top:
+        int 21h
+        inc dl
+        
+        loop top
+        
+        mov ah, 4ch
+        int 21h
+        
+        main endp
+end main
