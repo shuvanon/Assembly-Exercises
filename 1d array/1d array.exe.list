@@ -1,0 +1,86 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+1d array.exe -- emu8086 assembler version: 4.08  
+ 
+[ 1/1/2017  --  5:52:01 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       .model small
+[   2]        :                                       .data
+[   3]    0000: 01 02 03 04 05                        a db 1,2,3,4,5
+[   4]        :                                       .code
+[   5]        :                                       
+[   6]    0010:                                       main proc
+[   7]    0010: B8 00 00                              mov ax, @data
+[   8]    0013: 8E D8                                 mov ds,ax
+[   9]        :                                       
+[  10]    0015: B0 00                                 mov al,0
+[  11]    0017: B9 04 00                              mov cx,4
+[  12]    001A: BF 00 00                              mov DI,0
+[  13]        :                                       
+[  14]    001D:                                       sum:
+[  15]    001D: 8A 05                                 mov al,a[DI]
+[  16]    001F: 02 45 01                              add al, a[DI+1]
+[  17]        :                                       
+[  18]    0022: B4 02                                 mov ah,2
+[  19]    0024: 04 30                                 add al,48
+[  20]    0026: 8A D0                                 mov dl,al
+[  21]    0028: CD 21                                 int 21h
+[  22]        :                                       
+[  23]    002A: 47                                    INC DI
+[  24]    002B: 49                                    DEC cx
+[  25]        :                                       
+[  26]    002C: 83 F9 00                              cmp cx,0
+[  27]    002F: 75 EC                                 jne sum
+[  28]        :                                       
+[  29]        :                                       main endp
+[  30]        :                                       end main
+[  31]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 31      -   bytes on last page (l.byte)
+0003: 00      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 00      -   SP - stack pointer (h.byte)
+0012: D2      -   check sum (l.byte)
+0013: 3A      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 01      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 01      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================
