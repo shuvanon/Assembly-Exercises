@@ -1,2 +1,14 @@
 # Assembly-Exercises
 - Input Output with newline
+- String print
+- Hello World
+- Add two integer 
+- Loop
+- Nested Loop
+- Loop print A to Z
+- JMP instructions
+- Procedure
+- Factorial
+- 1D array
+- String copy and reverse
+- Bit pattern invert
