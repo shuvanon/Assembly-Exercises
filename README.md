@@ -1,4 +1,7 @@
-# Assembly-Exercises
+# Assembly language - Exercises
+
+Assembly language exercises code for learning and understanding basic Assembly language.
+
 - Input Output with newline
 - String print
 - Hello World
